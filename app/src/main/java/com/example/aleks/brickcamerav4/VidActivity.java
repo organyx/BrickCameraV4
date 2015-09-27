@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 public class VidActivity extends AppCompatActivity {
 
@@ -33,5 +34,11 @@ public class VidActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onBtnRecordVideoClick(View view) {
+    }
+
+    public void onVideoClick(View view) {
     }
 }

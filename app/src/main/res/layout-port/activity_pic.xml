@@ -5,9 +5,10 @@
     android:background="@drawable/phone_portrait">
     <ImageView
         android:id="@+id/ivLastPicture"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/borders"
         android:layout_margin="5dp"/>
     <LinearLayout
@@ -61,7 +62,38 @@
                 android:layout_height="wrap_content" />
         </LinearLayout>
     </LinearLayout>
+
+    <fragment
+        android:id="@+id/googleMap"
+        android:name="com.google.android.gms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_above="@+id/bottom"/>
     <LinearLayout
+        android:id="@+id/pop_up_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@+id/bottom"
+        android:paddingBottom="30dp"
+        android:background="@drawable/thin_border"
+        android:layout_centerHorizontal="true"
+
+        android:onClick="onPopUpClick">
+        <TextView
+            android:id="@+id/pop_up_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Text_Style"/>
+        <ImageView
+            android:id="@+id/pop_up_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom"
         android:layout_alignParentBottom="true"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
