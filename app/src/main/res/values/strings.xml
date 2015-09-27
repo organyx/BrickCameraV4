@@ -13,4 +13,5 @@
     <string name="title_activity_snapshot">SnapshotActivity</string>
     <string name="title_activity_pic">PicActivity</string>
     <string name="title_activity_vid">VidActivity</string>
+    <string name="title_activity_picture">PictureActivity</string>
 </resources>

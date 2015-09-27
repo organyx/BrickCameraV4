@@ -33,7 +33,9 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 public class PicActivity extends AppCompatActivity implements GoogleMap.OnMarkerClickListener, OnMapReadyCallback, View.OnClickListener {
@@ -54,6 +56,9 @@ public class PicActivity extends AppCompatActivity implements GoogleMap.OnMarker
 
     private GoogleMap gmap;
     private Button btnDoc;
+
+    private static final int MENU = 1;
+    private static final int GROUP = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,8 +92,32 @@ public class PicActivity extends AppCompatActivity implements GoogleMap.OnMarker
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+
+//        List<File> files = getListFiles(pictureDirectory);
+//
+//        for (int i = 0; i < files.size(); i++)
+//        {
+//            menu.add(GROUP, MENU, i, i);
+//            Log.d("OptionsMenu", "Item: " + i);
+//        }
+
         getMenuInflater().inflate(R.menu.menu_pic, menu);
         return true;
+    }
+
+    private List<File> getListFiles(File parentDir) {
+        ArrayList<File> inFiles = new ArrayList<File>();
+        File[] files = parentDir.listFiles();
+        for (File file : files) {
+            if (file.isDirectory()) {
+                inFiles.addAll(getListFiles(file));
+            } else {
+                if(file.getName().endsWith(".csv")){
+                    inFiles.add(file);
+                }
+            }
+        }
+        return inFiles;
     }
 
     @Override
