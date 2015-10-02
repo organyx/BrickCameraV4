@@ -45,15 +45,22 @@
             android:name=".PictureActivity"
             android:label="@string/title_activity_picture" >
         </activity>
-        <receiver android:name=".widget_class">
+
+        <receiver android:name=".widget_class" >
             <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE"/>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="BROADCAST_WEATHER"/>
             </intent-filter>
 
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_xml"/>
+                android:resource="@xml/widget_xml" />
         </receiver>
+
+        <service
+            android:name=".WeatherService"
+  >
+        </service>
     </application>
 
 </manifest>

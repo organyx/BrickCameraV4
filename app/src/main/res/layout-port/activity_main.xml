@@ -16,4 +16,20 @@
             android:layout_height="wrap_content"
             android:onClick="onBtnVidClick"/>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnWeather"
+        android:layout_centerInParent="true"
+        android:text="--:--"/>
+    <Button
+        android:id="@+id/btnWeather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:onClick="onBtnWeatherClick"
+        android:text="Weather"/>
 </RelativeLayout>

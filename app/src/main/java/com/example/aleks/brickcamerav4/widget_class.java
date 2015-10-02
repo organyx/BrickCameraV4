@@ -5,6 +5,8 @@ import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.widget.RemoteViews;
 
 import java.text.DateFormat;
@@ -13,18 +15,17 @@ import java.util.Date;
 
 /**
  * Created by Aleks on 30-Sep-15.
+ * Widget App for BrickCamera
  */
 public class widget_class extends AppWidgetProvider {
     @Override
-    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds)
-    {
-        for (int i = 0; i < appWidgetIds.length; i++)
-        {
+    public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
+        for (int i = 0; i < appWidgetIds.length; i++) {
             int currentWidgetId = appWidgetIds[i];
 
             DateFormat df = new SimpleDateFormat("HH:mm:ss");
             String timetext = df.format(new Date());
-            timetext = currentWidgetId+ ")      " + timetext;
+            timetext = currentWidgetId + ")      " + timetext;
 
             Intent startAppIntent = new Intent(context, MainActivity.class);
             PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, startAppIntent, 0);
@@ -34,6 +35,8 @@ public class widget_class extends AppWidgetProvider {
             views.setTextViewText(R.id.tvUpdate, timetext);
 
             appWidgetManager.updateAppWidget(currentWidgetId, views);
+
+
         }
     }
 }

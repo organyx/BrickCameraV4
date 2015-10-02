@@ -4,6 +4,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
+    <string name="open_weather_apikey">e35fa1e691607347d317c8ebdce1571f</string>
+
     <string name="orientation">Orientation: </string>
     <string name="latitude">Latitude: </string>
     <string name="longitude">Longitude: </string>
